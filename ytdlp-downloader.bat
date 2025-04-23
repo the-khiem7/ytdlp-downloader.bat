@@ -38,18 +38,20 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-echo.
-echo YouTube Private Downloader
-echo ==============================
-echo.
-
 :: Nhập link và cookie
 set /p video_url=Enter YouTube video URL: 
+echo Note: To get cookies.txt file:
+echo 1. Install "Get cookies.txt LOCALLY" extension from:
+echo    https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc
+echo 2. Log in to YouTube
+echo 3. Click extension icon and Export cookies.txt
+echo.
 set /p cookies_file=Enter full path to cookies.txt file: 
 
 :: Kiểm tra cookies tồn tại
 if not exist "%cookies_file%" (
     echo Cookie file not found!
+    echo Please install the "Get cookies.txt LOCALLY" Chrome extension and export your cookies first.
     pause
     exit /b
 )
